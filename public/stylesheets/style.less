@@ -2,6 +2,7 @@
 
 body {
   padding-top: 60px;
+  background: #caced0 url(/images/noise.png);
 }
 
 /* Functions */
@@ -16,7 +17,6 @@ body {
   -webkit-box-shadow: @oofX @offY @length @color;
   box-shadow: @oofX @offY @length @color;
 }
-
 
 /* Styles */
 
@@ -62,7 +62,8 @@ body .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > l
       max-height: 270px;
     }
     div.price, div.name {
-      height: 25px; overflow: hidden;
+      height: 25px;
+      overflow: hidden;
     }
     div.name {
       font-weight: bold;
@@ -70,11 +71,11 @@ body .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > l
       height: 30px;
     }
     @media (max-width: 980px) {
-        min-width: 31%;
+      min-width: 31%;
     }
     @media (max-width: 480px) {
-        min-width: 47%;
-        margin-right: 3%;
+      min-width: 47%;
+      margin-right: 3%;
     }
   }
 }
@@ -84,21 +85,69 @@ body .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > l
   float: right;
   display: block;
   height: 50px;
-  background: #fff;
+  background: #222;
   border: none;
-  color: #000;
+  color: white;
   text-align: right;
-  padding: 0 10px;
+  padding: 3px 10px 0;
   margin-right: -15px;
   .icon {
     display: block;
-    float: right;
+    float: left;
     height: 24px;
     width: 24px;
     margin: 0 10px;
-    background: url('/images/cart.png') 0 0 no-repeat;
+    background: url('/images/cart_dark.png') 0 0 no-repeat;
+    margin-top: -3px;
+  }
+  .icon.cart-clear {
+    width: 24px;
+    height: 24px;
+    float: right;
+  }
+  .cart-count {
+    display: inline-block;
+    min-width: 28px;
+    height: 21px;
+    line-height: 21px;
+    white-space: nowrap;
+    text-align: center;
+    padding: 0 4px;
+    margin: 0 4px;
+    font-weight: bold;
+    border-radius: 10px;
+    background: #767a81;
+    color: #9fa2a7;
+    .box-shadow(0,0,4px, rgba(0, 0, 0, .5));
+  }
+  .cart-sum, .cart-clear {
+    display: none;
   }
 }
+
+.shopping-cart:hover {
+  background: #433f43;
+}
+
 .shopping-cart.active {
-  .icon { background-position: 0 100%; }
+  .icon {
+    background-position: 0 100%;
+  }
+  .icon.cart-clear {
+    display: block;
+    background-position: 100% 0;
+    opacity: 0.5;
+  }
+  .icon.cart-clear:hover {
+    display: block;
+    background-position: 100% 100%;
+    opacity: 1;
+  }
+  .cart-count {
+    background: #f83c35;
+    color: #fff;
+  }
+  .cart-sum, .cart-clear {
+    display: inline;
+  }
 }

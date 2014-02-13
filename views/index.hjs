@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Test NodeJS Shop</title>
-    <link rel='stylesheet' href='/stylesheets/style.css'/>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="/javascripts/jquery-ui-1.10.4.effects.min.js"></script>
     <script src="/javascripts/base.js"></script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -18,12 +19,14 @@
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Node Shop ™</a>
-        </div>
+        <a class="navbar-brand" href="#">Node Shop ™</a>
 
-        <button type="button" class="shopping-cart">
-            <span class="icon"></span> Корзина пуста
+        <button type="button" class="shopping-cart" disabled>
+            <span class="icon"></span>
+            <span class="cart-clear icon" title="Очистить корзину"></span>
+            <span class="cart-info">Корзина</span>
+            <span class="cart-count">0</span>
+            <span class="cart-sum"></span>
         </button>
     </div>
 </div>
